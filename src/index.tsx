@@ -1,4 +1,5 @@
 import JsxFactory from './core/JsxFactory';
+import './index.scss';
 
 import TestComponent from './testComponent';
 
