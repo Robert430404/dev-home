@@ -1,14 +1,15 @@
 import JsxFactory from './core/JsxFactory';
+import Title from './components/Title/Title';
 import './index.scss';
 
-import TestComponent from './testComponent';
-
-const renderComponent = () => {
+const Index = () => {
   return (
-    <div classNames="hello hey whatsup"><TestComponent /></div>
+    <main>
+      <Title />
+    </main>
   );
 }
 
-document.body.append(renderComponent());
+document.body.append(Index());
 
-export default renderComponent;
+export default Index;
