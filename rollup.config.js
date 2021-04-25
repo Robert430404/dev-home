@@ -1,3 +1,4 @@
+import copy from 'rollup-plugin-copy';
 import typescript from '@rollup/plugin-typescript';
 import scss from 'rollup-plugin-scss';
 import serve from 'rollup-plugin-serve';
@@ -9,7 +10,15 @@ export default {
     format: 'esm',
     exports: 'auto'
   },
-  plugins: [typescript(), scss({
-    output: 'public/dist/bundle.css'
-  }), serve('public')]
+  plugins: [
+    typescript(),
+    scss({
+      output: 'public/dist/bundle.css'
+    }),
+    copy({
+      targets: [
+        { src: 'src/assets/fonts/**', dest: 'public/dist/assets/fonts' }
+      ]
+    }),
+    serve('public')]
 };

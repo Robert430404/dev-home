@@ -1,3 +1,9 @@
+@font-face {
+  font-family: testFont;
+  src: url(./assets/fonts/bubbleFont.TTF)
+}
+
 div {
   color: red;
+  font-family: testFont;
 }
