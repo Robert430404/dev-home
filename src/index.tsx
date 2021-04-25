@@ -5,7 +5,7 @@ import TestComponent from './testComponent';
 
 const renderComponent = () => {
   return (
-    <div><TestComponent /></div>
+    <div classNames="hello hey whatsup"><TestComponent /></div>
   );
 }
 
