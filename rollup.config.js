@@ -17,7 +17,8 @@ export default {
     }),
     copy({
       targets: [
-        { src: 'src/assets/fonts/**', dest: 'public/dist/assets/fonts' }
+        { src: 'src/assets/fonts/**', dest: 'public/dist/assets/fonts' },
+        { src: 'src/assets/images/**', dest: 'public/dist/assets/images' }
       ]
     }),
     serve('public')]

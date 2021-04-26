@@ -1,3 +1,5 @@
+import { isHtmlElement } from "../utilities/guards";
+
 declare global {
   namespace JSX {
     interface IntrinsicElements {
@@ -6,7 +8,7 @@ declare global {
   }
 }
 
-enum PropValues {
+enum AlteredPropValues {
   ClassNames = 'classNames'
 }
 
@@ -23,16 +25,26 @@ class JsxFactory {
     }
 
     children.forEach((child: any) => {
-      element.append(child);
+      if (isHtmlElement(child)) {
+        element.append(child);
+      }
+
+      if (typeof child === 'string') {
+        element.append(document.createTextNode(child));
+      }
     });
 
     if (props) {
       for (const [key, value] of Object.entries(props)) {
-        if (key === PropValues.ClassNames) {
+        if (key === AlteredPropValues.ClassNames) {
           const classNames = value.split(' ');
 
           classNames.forEach(className => element.classList.add(className));
+
+          continue;
         }
+
+        element.setAttribute(key, value);
       }
     }
 
