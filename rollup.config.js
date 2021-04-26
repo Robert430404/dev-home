@@ -1,4 +1,5 @@
 import copy from 'rollup-plugin-copy';
+import del from 'rollup-plugin-delete';
 import typescript from '@rollup/plugin-typescript';
 import scss from 'rollup-plugin-scss';
 import serve from 'rollup-plugin-serve';
@@ -11,6 +12,9 @@ export default {
     exports: 'auto'
   },
   plugins: [
+    del({
+      targets: 'public/dist/*'
+    }),
     typescript(),
     scss({
       output: 'public/dist/bundle.css'
