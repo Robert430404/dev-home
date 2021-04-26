@@ -13,7 +13,7 @@ enum AlteredPropValues {
 }
 
 class JsxFactory {
-  public static parse(tag: any, props: Record<string, string>, ...children: any) {
+  public static parse(tag: any, props: Record<string, string> | null, ...children: any) {
     let element: HTMLElement = document.createElement('header');
 
     if (typeof tag === 'function') {

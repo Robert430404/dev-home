@@ -1,5 +1,5 @@
 import JsxFactory from './core/JsxFactory';
-import Title from './components/Title/Title';
+import Title from './components/Title';
 import './index.scss';
 
 const Index = () => {

@@ -1,4 +1,4 @@
-import JsxFactory from '../../core/JsxFactory';
+import JsxFactory from '../core/JsxFactory';
 import './title.scss';
 
 const Title = () => {
