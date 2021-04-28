@@ -29,6 +29,10 @@ class JsxFactory {
         element.append(child);
       }
 
+      if (typeof child === 'number') {
+        element.append(document.createTextNode(child.toString(10)));
+      }
+
       if (typeof child === 'string') {
         element.append(document.createTextNode(child));
       }
