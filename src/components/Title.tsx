@@ -5,7 +5,7 @@ const Title = () => {
   return (
     <div classNames="title">
       Brandon Carmody
-      <img src="./dist/assets/images/dev-home-sign.png" />
+      <img src="./assets/images/dev-home-sign.png" />
     </div>
   );
 };

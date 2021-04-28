@@ -1,0 +1,10 @@
+@font-face {
+  font-family: bubbleFont;
+  src: url(./assets/fonts/bubbleFont.TTF); }
+
+div {
+  color: red;
+  font-family: bubbleFont; }
+
+.title {
+  color: green; }

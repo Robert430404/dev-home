@@ -2,7 +2,7 @@
   "name": "dev-home",
   "version": "1.0.0",
   "description": "",
-  "main": "src/index.ts",
+  "main": "src/index.tsx",
   "scripts": {
     "dev": "rollup -c -w",
     "test": "NODE_ENV=test jest"

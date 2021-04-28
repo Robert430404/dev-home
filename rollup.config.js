@@ -7,23 +7,24 @@ import serve from 'rollup-plugin-serve';
 export default {
   input: 'src/index.tsx',
   output: {
-    dir: 'public/dist',
+    dir: 'dist',
     format: 'esm',
     exports: 'auto'
   },
   plugins: [
     del({
-      targets: 'public/dist/*'
+      targets: 'dist/*'
     }),
     typescript(),
     scss({
-      output: 'public/dist/bundle.css'
+      output: 'dist/bundle.css'
     }),
     copy({
       targets: [
-        { src: 'src/assets/fonts/**', dest: 'public/dist/assets/fonts' },
-        { src: 'src/assets/images/**', dest: 'public/dist/assets/images' }
+        { src: 'public/**', dest: 'dist' },
+        { src: 'src/assets/fonts/**', dest: 'dist/assets/fonts' },
+        { src: 'src/assets/images/**', dest: 'dist/assets/images' }
       ]
     }),
-    serve('public')]
+    serve('dist')]
 };

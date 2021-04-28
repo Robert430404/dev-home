@@ -5,7 +5,7 @@
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
     "rootDir": "src",
-    "outDir": "public/dist",
+    "outDir": "dist",
     "jsx": "react",
     "jsxFactory": "JsxFactory.parse"
   }
