@@ -51,6 +51,7 @@ var Ground = function () {
 
 var Index = function () {
     return (JsxFactory.parse("main", null,
+        "Brandon Carmody",
         JsxFactory.parse(Ground, null)));
 };
 document.body.append(Index());
