@@ -1,11 +1,11 @@
-import JsxFactory from './core/JsxFactory';
-import Title from './components/Title';
+import JsxFactory from './core/JsxFactory/JsxFactory';
+import Ground from './components/Ground/Ground';
 import './index.scss';
 
 const Index = () => {
   return (
     <main>
-      <Title />
+      <Ground />
     </main>
   );
 }

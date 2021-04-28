@@ -1,9 +1,21 @@
-@font-face {
-  font-family: bubbleFont;
-  src: url(./assets/fonts/bubbleFont.TTF)
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
 }
 
-div {
-  color: red;
-  font-family: bubbleFont;
+html {
+  //This defines what 1rem is
+  font-size: 62.5%;
+}
+
+body {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
 }

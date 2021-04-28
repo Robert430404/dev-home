@@ -4,7 +4,7 @@ var isHtmlElement = function (element) {
 
 var AlteredPropValues;
 (function (AlteredPropValues) {
-    AlteredPropValues["ClassNames"] = "classNames";
+    AlteredPropValues["ClassName"] = "className";
 })(AlteredPropValues || (AlteredPropValues = {}));
 var JsxFactory = /** @class */ (function () {
     function JsxFactory() {
@@ -32,7 +32,7 @@ var JsxFactory = /** @class */ (function () {
         if (props) {
             for (var _a = 0, _b = Object.entries(props); _a < _b.length; _a++) {
                 var _c = _b[_a], key = _c[0], value = _c[1];
-                if (key === AlteredPropValues.ClassNames) {
+                if (key === AlteredPropValues.ClassName) {
                     var classNames = value.split(' ');
                     classNames.forEach(function (className) { return element.classList.add(className); });
                     continue;
@@ -45,15 +45,13 @@ var JsxFactory = /** @class */ (function () {
     return JsxFactory;
 }());
 
-var Title = function () {
-    return (JsxFactory.parse("div", { classNames: "title" },
-        "Brandon Carmody",
-        JsxFactory.parse("img", { src: "./assets/images/dev-home-sign.png" })));
+var Ground = function () {
+    return (JsxFactory.parse("div", { className: "ground" }));
 };
 
 var Index = function () {
     return (JsxFactory.parse("main", null,
-        JsxFactory.parse(Title, null)));
+        JsxFactory.parse(Ground, null)));
 };
 document.body.append(Index());
 

@@ -1,4 +1,4 @@
-import JsxFactory from '../../core/JsxFactory';
+import JsxFactory from './JsxFactory';
 
 describe('JsxFactory tests', () => {
   test('Parse function', () => {

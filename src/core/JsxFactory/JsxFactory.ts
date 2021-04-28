@@ -1,4 +1,4 @@
-import { isHtmlElement } from "../utilities/guards";
+import { isHtmlElement } from "../../utilities/guards/guards";
 
 declare global {
   namespace JSX {
@@ -9,7 +9,7 @@ declare global {
 }
 
 enum AlteredPropValues {
-  ClassNames = 'classNames'
+  ClassName = 'className'
 }
 
 class JsxFactory {
@@ -36,7 +36,7 @@ class JsxFactory {
 
     if (props) {
       for (const [key, value] of Object.entries(props)) {
-        if (key === AlteredPropValues.ClassNames) {
+        if (key === AlteredPropValues.ClassName) {
           const classNames = value.split(' ');
 
           classNames.forEach(className => element.classList.add(className));
