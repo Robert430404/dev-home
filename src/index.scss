@@ -17,12 +17,15 @@ body {
 
 html,
 body {
+  @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+  font-family: 'Press Start 2P', cursive;
   height: 100%;
 }
 
 main {
   height: 100vh;
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
 }

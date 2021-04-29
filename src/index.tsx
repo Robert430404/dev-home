@@ -5,8 +5,7 @@ import './index.scss';
 const Index = () => {
   return (
     <main>
-      Brandon Carmody
-      <Ground />
+      dev-home
     </main>
   );
 }

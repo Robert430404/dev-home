@@ -25,6 +25,9 @@ var JsxFactory = /** @class */ (function () {
             if (isHtmlElement(child)) {
                 element.append(child);
             }
+            if (typeof child === 'number') {
+                element.append(document.createTextNode(child.toString(10)));
+            }
             if (typeof child === 'string') {
                 element.append(document.createTextNode(child));
             }
@@ -45,14 +48,8 @@ var JsxFactory = /** @class */ (function () {
     return JsxFactory;
 }());
 
-var Ground = function () {
-    return (JsxFactory.parse("div", { className: "ground" }));
-};
-
 var Index = function () {
-    return (JsxFactory.parse("main", null,
-        "Brandon Carmody",
-        JsxFactory.parse(Ground, null)));
+    return (JsxFactory.parse("main", null, "dev-home"));
 };
 document.body.append(Index());
 
