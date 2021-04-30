@@ -1,3 +1,15 @@
+@import './scss/utilities/themes.scss';
+
+@include lightTheme {
+  --backgroundColor: white;
+  --textColor: black;
+}
+
+@include darkTheme {
+  --backgroundColor: black;
+  --textColor: white;
+}
+
 *,
 *::after,
 *::before {
@@ -20,6 +32,8 @@ body {
   @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
   font-family: 'Press Start 2P', cursive;
   height: 100%;
+  background-color: var(--backgroundColor);
+  color: var(--textColor);
 }
 
 main {

@@ -12,8 +12,12 @@ enum AlteredPropValues {
   ClassName = 'className'
 }
 
+enum EventListenerProps {
+  OnClick = 'onClick'
+}
+
 class JsxFactory {
-  public static parse(tag: any, props: Record<string, string> | null, ...children: any) {
+  public static parse(tag: any, props: Record<string, string | Function> | null, ...children: any) {
     let element: HTMLElement = document.createElement('header');
 
     if (typeof tag === 'function') {
@@ -41,6 +45,10 @@ class JsxFactory {
     if (props) {
       for (const [key, value] of Object.entries(props)) {
         if (key === AlteredPropValues.ClassName) {
+          if (value !== 'string') {
+            continue;
+          }
+
           const classNames = value.split(' ');
 
           classNames.forEach(className => element.classList.add(className));
@@ -48,7 +56,17 @@ class JsxFactory {
           continue;
         }
 
-        element.setAttribute(key, value);
+        if (key === EventListenerProps.OnClick) {
+          if (typeof value !== 'function') {
+            continue;
+          }
+
+          element.addEventListener('click', () => value());
+
+          continue;
+        }
+
+        element.setAttribute(key, value as string);
       }
     }
 

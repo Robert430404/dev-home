@@ -6,6 +6,10 @@ var AlteredPropValues;
 (function (AlteredPropValues) {
     AlteredPropValues["ClassName"] = "className";
 })(AlteredPropValues || (AlteredPropValues = {}));
+var EventListenerProps;
+(function (EventListenerProps) {
+    EventListenerProps["OnClick"] = "onClick";
+})(EventListenerProps || (EventListenerProps = {}));
 var JsxFactory = /** @class */ (function () {
     function JsxFactory() {
     }
@@ -33,14 +37,27 @@ var JsxFactory = /** @class */ (function () {
             }
         });
         if (props) {
-            for (var _a = 0, _b = Object.entries(props); _a < _b.length; _a++) {
-                var _c = _b[_a], key = _c[0], value = _c[1];
+            var _loop_1 = function (key, value) {
                 if (key === AlteredPropValues.ClassName) {
+                    if (value !== 'string') {
+                        return "continue";
+                    }
                     var classNames = value.split(' ');
                     classNames.forEach(function (className) { return element.classList.add(className); });
-                    continue;
+                    return "continue";
+                }
+                if (key === EventListenerProps.OnClick) {
+                    if (typeof value !== 'function') {
+                        return "continue";
+                    }
+                    element.addEventListener('click', function () { return value(); });
+                    return "continue";
                 }
                 element.setAttribute(key, value);
+            };
+            for (var _a = 0, _b = Object.entries(props); _a < _b.length; _a++) {
+                var _c = _b[_a], key = _c[0], value = _c[1];
+                _loop_1(key, value);
             }
         }
         return element;
@@ -48,8 +65,40 @@ var JsxFactory = /** @class */ (function () {
     return JsxFactory;
 }());
 
+var Themes;
+(function (Themes) {
+    Themes["Light"] = "lightTheme";
+    Themes["Dark"] = "darkTheme";
+})(Themes || (Themes = {}));
+var initTheme = function () {
+    var currentTheme = localStorage.getItem('theme');
+    if (!currentTheme) {
+        document.body.classList.add(Themes.Light);
+        localStorage.setItem('theme', Themes.Light);
+        return;
+    }
+    document.body.classList.add(currentTheme);
+};
+var switchTheme = function () {
+    var currentTheme = localStorage.getItem('theme');
+    if (currentTheme === Themes.Light) {
+        document.body.classList.replace(Themes.Light, Themes.Dark);
+        localStorage.setItem('theme', Themes.Dark);
+    }
+    if (currentTheme === Themes.Dark) {
+        document.body.classList.replace(Themes.Dark, Themes.Light);
+        localStorage.setItem('theme', Themes.Light);
+    }
+};
+var ThemeSwitcher = function () {
+    initTheme();
+    return (JsxFactory.parse("button", { onClick: switchTheme }, "Switch Theme"));
+};
+
 var Index = function () {
-    return (JsxFactory.parse("main", null, "dev-home"));
+    return (JsxFactory.parse("main", null,
+        "bmcarmody/dev-home",
+        JsxFactory.parse(ThemeSwitcher, null)));
 };
 document.body.append(Index());
 
