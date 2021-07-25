@@ -1,4 +1,5 @@
 @import './scss/tokens/colors';
+@import './scss/tokens/spacing';
 
 $selector: '.about';
 
@@ -14,10 +15,46 @@ $selector: '.about';
 
   &_info {
     display: flex;
+    justify-content: end;
     align-items: center;
+    font-size: 32px;
+    text-align: right;
   }
+
+  &_passions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 56px;
+    font-family: 'Alef', sans-serif;
+  }
+
 
   &_highlight {
     color: $primaryHighlight;
+  }
+}
+
+.test {
+  border: 4px solid $secondaryHighlight;
+  padding-right: 8px;
+  display: flex;
+  align-items: center;
+  padding: 2px 12px;
+}
+
+.cursor {
+  width: 3px;
+  height: 56px;
+  background: $yellow;
+  animation: blink .6s linear infinite alternate;
+  margin-left: 8px;
+  
+  @keyframes blink {
+    0% {opacity: 1;}
+    40% {opacity: 1;}
+    60% {opacity: 0;}
+    100% {opacity: 0;}
   }
 }

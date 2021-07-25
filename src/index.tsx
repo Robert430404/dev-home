@@ -1,5 +1,6 @@
 import About from './components/About/About'
 import Header from './components/Header/Header';
+import Skills from './components/Skills/Skills';
 import JsxFactory from './core/JsxFactory/JsxFactory';
 import './index.scss';
 
@@ -20,6 +21,7 @@ const Index = () => {
       <Header />
       <main>
         <About />
+        <Skills />
       </main>
     </div>
   );

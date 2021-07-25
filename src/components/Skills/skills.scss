@@ -1,0 +1,10 @@
+@import './scss/tokens/colors';
+@import './scss/tokens/spacing';
+
+$selector: '.skills';
+
+#{$selector} {
+  background: $secondaryDark;
+  height: $sectionHeight;
+  padding: $globalPadding;
+}
