@@ -1,20 +1,22 @@
 @import './scss/tokens/colors.scss';
+@import './scss/tokens/spacing.scss';
 
 $selector: '.header';
 
 #{$selector} {
   display: flex;
-  height: 52px;
+  height: 60px;
   background: $primaryDark;
   justify-content: space-between;
   align-items: center;
-  padding: 0px 20px;
+  padding: $globalPadding;
 
   &_title {
-    font-size: 16px;
+    font-size: 18px;
   }
 
   &_link {
-    margin-left: 12px;
+    font-size: 13px;
+    margin-left: 36px;
   }
 }

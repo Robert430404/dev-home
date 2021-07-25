@@ -1,0 +1,23 @@
+@import './scss/tokens/colors';
+
+$selector: '.about';
+
+#{$selector} {
+  padding: $globalPadding;
+  display: flex;
+  background-color: $primaryDark;
+  height: $sectionHeight;
+
+  &_aside {
+    flex: 50%;
+  }
+
+  &_info {
+    display: flex;
+    align-items: center;
+  }
+
+  &_highlight {
+    color: $primaryHighlight;
+  }
+}

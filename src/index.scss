@@ -30,18 +30,13 @@ body {
 
 html,
 body {
-  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');;
-  font-family: 'Poppins', sans-serif;
+  @import url('https://fonts.googleapis.com/css2?family=Catamaran:wght@600&display=swap');
+  font-family: 'Catamaran', sans-serif;
   height: 100%;
-  background-color: var(--backgroundColor);
   color: var(--textColor);
 }
 
 main {
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   font-size: 3rem;
   font-weight: 600;
 }
