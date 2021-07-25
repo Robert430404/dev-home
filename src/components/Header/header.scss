@@ -9,14 +9,20 @@ $selector: '.header';
   background: $primaryDark;
   justify-content: space-between;
   align-items: center;
-  padding: $globalPadding;
+  padding: 0px $globalPadding-xAxis;
 
   &_title {
     font-size: 18px;
   }
 
   &_link {
+    color: $white;
+    text-decoration: none;
     font-size: 13px;
     margin-left: 36px;
+
+    &:hover {
+      border-bottom: 4px solid $secondaryHighlight;
+    }
   }
 }

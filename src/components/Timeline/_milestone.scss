@@ -1,0 +1,33 @@
+@import './scss/tokens/colors';
+
+$selector: '.milestone';
+
+#{$selector} {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &_indicator {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    background: white;
+    border-radius: 50%;
+
+    &_innerDot {
+      width: 24px;
+      height: 24px;
+      background: $secondaryHighlight;
+      border-radius: 50%;
+    }
+  }
+
+  &_connector {
+    height: 100%;
+    width: 4px;
+    background: white;
+  }
+}

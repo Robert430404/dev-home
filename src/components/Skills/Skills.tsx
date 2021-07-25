@@ -3,9 +3,7 @@ import './skills.scss';
 
 const Skills = () => {
   return (
-    <section className="skills">
-      
-    </section>
+    <section className="skills"></section>
   );
 };
 

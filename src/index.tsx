@@ -1,4 +1,5 @@
 import About from './components/About/About'
+import Experience from './components/Experience/Experience';
 import Header from './components/Header/Header';
 import Skills from './components/Skills/Skills';
 import JsxFactory from './core/JsxFactory/JsxFactory';
@@ -21,7 +22,8 @@ const Index = () => {
       <Header />
       <main>
         <About />
-        <Skills />
+        <Experience />
+        {/* <Skills /> */}
       </main>
     </div>
   );

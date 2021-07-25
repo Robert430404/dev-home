@@ -4,7 +4,7 @@
 $selector: '.skills';
 
 #{$selector} {
-  background: $secondaryDark;
+  background: $primaryDark;
   height: $sectionHeight;
-  padding: $globalPadding;
+  padding: 0px $globalPadding-xAxis;
 }

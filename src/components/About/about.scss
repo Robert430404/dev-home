@@ -4,7 +4,7 @@
 $selector: '.about';
 
 #{$selector} {
-  padding: $globalPadding;
+  padding: 0px $globalPadding-xAxis;
   display: flex;
   background-color: $primaryDark;
   height: $sectionHeight;

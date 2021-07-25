@@ -30,11 +30,21 @@ class JsxFactory {
       element = document.createElement(tag);
     }
 
+    // console.log('------------');
+    // console.log('Tag', tag);
+    // console.log('Props', props);
+    // console.log('Children', children);
+
     // TODO: Get away from using .append as its unsafe
     // Acceptance Criteria: appendChild is used instead
     children.forEach((child: any) => {
       if (isHtmlElement(child)) {
         element.append(child);
+      }
+
+      // TODO: Comment as to why. .map() returns array
+      if (Array.isArray(child)) {
+        child.forEach(childElement => element.append(childElement));
       }
 
       if (typeof child === 'number') {

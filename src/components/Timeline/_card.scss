@@ -1,0 +1,18 @@
+@import './scss/tokens/colors';
+
+$selector: '.card';
+
+#{$selector} {
+  background: #2A2F52;
+  border-radius: 4px;
+  padding: 8px;
+
+  h4 {
+    font-weight: bold;
+    font-size: 20px;
+    border-bottom: 4px solid $yellow;
+    width: min-content;
+    white-space: nowrap;
+    margin-bottom: 12px;
+  }
+}

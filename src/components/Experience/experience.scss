@@ -1,0 +1,32 @@
+@import './scss/tokens/colors';
+@import './scss/tokens/spacing';
+
+$selector: '.experience';
+
+#{$selector} {
+  background: $secondaryDark;
+  padding: $sectionPadding;
+}
+
+.timeline {
+  display: flex;
+
+  &_lines {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &_milestone {
+    width: 12px;
+    height: 12px;
+    background: white;
+    border-radius: 7px;
+
+    &_connector {
+      height: fit-content;
+      width: 4px;
+      background: white;
+    }
+  }
+}

@@ -6,7 +6,7 @@ const Header = () => {
     <header className="header">
       <span className="header_title">bmcarmody/dev-home</span>
       <div className="header_links">
-        <span className="header_link">Test Section</span>
+        <a href="#experience" className="header_link">Experience</a>
         <span className="header_link">Test Section</span>
         <span className="header_link">Test Section</span>
       </div>

@@ -31,7 +31,14 @@ body {
   color: var(--textColor);
 }
 
-main {
-  font-size: 3rem;
-  font-weight: 600;
+h1 {
+  &::before {
+    width: 104px;
+    height: 8px;
+    background: $primaryHighlight;
+    content: '';
+    display: flex;
+  }
+
+  font-size: 32px;
 }

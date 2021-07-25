@@ -1,0 +1,16 @@
+$selector: '.timeline';
+
+#{$selector} {
+  display: flex;
+  flex-direction: column;
+
+  &_section {
+    display: flex;
+  }
+
+  .card {
+    margin-top: 8px;
+    margin-left: 12px;
+    margin-bottom: 24px;
+  }
+}
