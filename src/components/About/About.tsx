@@ -1,5 +1,8 @@
+import TypeWriter from '../TypeWriter/TypeWriter';
 import JsxFactory from "../../core/JsxFactory/JsxFactory";
 import './about.scss';
+
+const typeWriterWords = ['Front-end', 'Back-end', 'Design-Systems', 'Micro-Frontends', 'Architecture'];
 
 const About = () => {
   return (
@@ -13,8 +16,8 @@ const About = () => {
         </p>
       </aside>
       <aside className="about_aside about_passions">
-        <p className="test">
-          Front-end <span className="cursor"></span>
+        <p className="about_passions_text">
+          <TypeWriter words={typeWriterWords} delay={150}/> <span className="about_passions_cursor"></span>
         </p>
       </aside>
     </section>

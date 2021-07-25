@@ -27,34 +27,35 @@ $selector: '.about';
     align-items: center;
     color: white;
     font-size: 56px;
+    line-height: .75em;
     font-family: 'Alef', sans-serif;
   }
 
+  &_passions_text {
+    border: 4px solid $secondaryHighlight;
+    padding: 2px 12px;
+    font-size: 52px;
+    display: flex;
+    align-items: center;
+    min-height: calc(56px + .75em);
+  }
+
+  &_passions_cursor {
+    width: 3px;
+    height: 56px;
+    background: $yellow;
+    animation: blink .6s linear infinite alternate;
+    margin-left: 8px;
+    
+    @keyframes blink {
+      0% {opacity: 1;}
+      40% {opacity: 1;}
+      60% {opacity: 0;}
+      100% {opacity: 0;}
+    }
+  }
 
   &_highlight {
     color: $primaryHighlight;
-  }
-}
-
-.test {
-  border: 4px solid $secondaryHighlight;
-  padding-right: 8px;
-  display: flex;
-  align-items: center;
-  padding: 2px 12px;
-}
-
-.cursor {
-  width: 3px;
-  height: 56px;
-  background: $yellow;
-  animation: blink .6s linear infinite alternate;
-  margin-left: 8px;
-  
-  @keyframes blink {
-    0% {opacity: 1;}
-    40% {opacity: 1;}
-    60% {opacity: 0;}
-    100% {opacity: 0;}
   }
 }
