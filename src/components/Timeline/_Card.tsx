@@ -1,7 +1,7 @@
 import JsxFactory from "../../core/JsxFactory/JsxFactory";
 import './_card.scss';
 
-export type Props = {
+export interface Props {
   date: string,
   company: string,
   achievement: string

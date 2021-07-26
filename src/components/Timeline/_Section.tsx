@@ -1,17 +1,17 @@
 import JsxFactory from "../../core/JsxFactory/JsxFactory";
-import Milestone from './_Milestone';
+import Milestone, { Props as MilestoneProps } from './_Milestone';
 import Card, { Props as CardProps } from "./_Card";
 import './_section.scss';
 
-export type Props = {
-  cardProps: CardProps
+export interface Props extends MilestoneProps, CardProps {
+  section: Props
 }
 
 const Section = (props: Props) => {
   return (
     <div className="section">
-      <Milestone />
-      <Card date={props.cardProps.date} company={props.cardProps.company} achievement={props.cardProps.achievement}/>
+      <Milestone isFirst={props.section.isFirst}/>
+      <Card date={props.section.date} company={props.section.company} achievement={props.section.achievement}/>
     </div>
   );
 }

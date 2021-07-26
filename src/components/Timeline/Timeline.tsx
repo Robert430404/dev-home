@@ -18,12 +18,12 @@ const sections = [
     company: 'Slickdeals',
     achievement: 'Hired on as Associate Front-end Engineer'
   }
-]
+];
 
 const Timeline = () => {
   return (
     <div className="timeline">
-      { ...sections.map(section => <Section cardProps={section} />) }
+      { ...sections.map(section => <Section section={section} />) }
     </div>
   );
 }
